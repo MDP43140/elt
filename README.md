@@ -26,13 +26,13 @@ elt(tag,attr,childs)
 |attr|Object (Optional)|HTML Attributes on a JSON object|
 |childs|Argument (Optional)|Child elements, can also be text|
 
-If you want to use it, you can copy the content of [this minified script](https://github.com/mdp43140/elt/main/elt.sec.min.js) to your project:
+If you want to use it, you can copy the content of [this minified script](https://raw.githubusercontent.com/MDP43140/elt/main/elt.min.js) to your project:
 ``` html
 <script>[put the copied code here]</script>
 ```
 or use a link (recommended):
 ``` html
-<script src="https://github.com/mdp43140/elt/main/elt.sec.min.js"></script>
+<script src="https://raw.githubusercontent.com/MDP43140/elt/main/elt.min.js"></script>
 ```
 
 
