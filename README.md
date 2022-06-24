@@ -1,9 +1,9 @@
-# CreateElement GPLHelper
+### CreateElement Helper
 Helper function that Makes Creating Element Easier while keeping the code very short,
 
 lightweight, independent, and looks as 'vanilla' as default javascript.
 
-# Features:
+### Features:
 + Extremely fast and lightweight.
 + Code is very small, promising below 1kb, currently the code is 392bytes in size, and 243bytes when minified.
 + Simple and Secure, with "use strict" & w/o vulnerability.
@@ -15,7 +15,7 @@ lightweight, independent, and looks as 'vanilla' as default javascript.
 + Independent (did not require any 3rd-party script).
 + Chainlink the element creation (see examples below).
 
-# Usage:
+### Usage:
 ``` javascript
 elt(tag,attr,childs)
 ```
@@ -36,7 +36,7 @@ or use a link (recommended):
 ```
 
 
-# Example:
+### Example:
 Before (without elt):
 ``` javascript
 var article = document.body; // just for example
@@ -87,18 +87,24 @@ let element = elt("P")  same as document.createElement("P")
 ```
 
 
-# Changelog:
+### Changelog:
 + Removed unnecesary code: hasOwnProperty, not useful (really you want to compare the same object?? lol).
 + Fixed "...argument" error when using "use strict", by replacing it with arguments variable (but making it so big and also must change arrow function to default bigger function, wont add on minified version)
 
 
-# Little Note about Slim minified version:
+### Min2 minified version:
+`elt=(t,a,...h)=>{let d=document.createElement(t);for(t in a)d.setAttribute(t,a[t]);for(a of h)d.append(typeof a=="string"?document.createTextNode(a):a);return d}`
++ More usable version than Min3 version.
++ Has code sanitation.
++ Variables not leaked to global scope.
+- Did'nt pass `"use strict";` test.
+
+### Min3 minified version:
+`elt=(t,a,...h)=>{d=document.createElement(t);for(t in a)d.setAttribute(t,a[t]);for(a of h)d.append(a);return d}`
++ World-record smallest yet more powerful `document.createElement()`.
+- Did'nt pass `"use strict";` test.
 - does'nt have Code Sanitation.
 - Leaking variables to global scope.
 
 so if you want to (display html code/write secure code),
-i would recommend using *non-slim* minified version or *secure* minfied version instead.
-because the slim version is just for some world record lol.
-
-
-
+i would recommend using more *safer* minified 2/minified version instead.
